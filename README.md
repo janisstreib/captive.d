@@ -1,3 +1,8 @@
+# ```captive.d```
+```captive.d``` is a collection of scripts to log in to captive portals automatically.
+
+Feel free to PR additional scripts.
+
 ## Integration in dispatcher.d (example)
 ```
 > cat /etc/NetworkManager/dispatcher.d/02-captive
