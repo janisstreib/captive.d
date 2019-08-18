@@ -1,2 +1,14 @@
-#!/bin/bash
-curl -s "https://www.ombord.info/hotspot/hotspot.cgi?connect=&method=login&realm=db_advanced_wifi"
+#!/usr/bin/env python3
+import requests
+from bs4 import BeautifulSoup
+
+session = requests.session()
+resp = session.get("http://detectportal.firefox.com")
+bs = BeautifulSoup(resp.text, 'lxml')
+token = bs.find("input", attrs={"name": "CSRFToken"})['value']
+print("Token:", token)
+resp_login = session.post("http://www.wifionice.de/de/", data={
+    'CSRFToken': token,
+    'login': 'true'
+    })
+print(resp_login)
