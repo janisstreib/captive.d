@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s "https://www.ombord.info/hotspot/hotspot.cgi?connect=&method=login&realm=db_advanced_wifi"
