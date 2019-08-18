@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 session = requests.session()
-resp = session.get("http://captive.dogcraft.de")
+resp = session.get("http://detectportal.firefox.com")
 bs = BeautifulSoup(resp.text, 'lxml')
 token = bs.find("input", attrs={"name": "_token"})['value']
 ceid = bs.find("input", attrs={"name": "_ceid"})['value']
