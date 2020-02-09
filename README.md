@@ -18,7 +18,7 @@ if [[ $INTERFACE = 'wlp3s0' &&  $STATE = 'up' ]]; then
 	if [[ "$PORTALCHECK" != "success" ]]; then
 		echo "Captive Portal detected!"
 		SSID=`nmcli -t -f active,ssid dev wifi | egrep '^yes' | cut -d: -f2`
-		if [ -f "/etc/NetworkManager/dispatcher.d/captive.d/$SSID" ]; then
+		if [[ "$SSID" =~ [a-zA-Z0-9\!-]* ]] && [[ -f "/etc/NetworkManager/dispatcher.d/captive.d/$SSID" ]]; then
 			/etc/NetworkManager/dispatcher.d/captive.d/$SSID
             # Optional: connect to VPN
             # nmcli connection up vpn
