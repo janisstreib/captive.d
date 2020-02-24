@@ -3,6 +3,10 @@
 
 Feel free to PR additional scripts.
 
+## Dependencies
+
+Some scripts are implemented using `bash` and `curl`. Others require more complex oprtations and are implememted in `python3` using `requests` and `BeautifulSoup 4` (`bs4`).
+
 ## Integration in dispatcher.d (example)
 ```
 > cat /etc/NetworkManager/dispatcher.d/02-captive
